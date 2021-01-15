@@ -14,6 +14,8 @@
     "react-three-fiber": "^5.3.10",
     "sass": "^1.32.0",
     "three": "^0.124.0",
+    "lodash": "^4.17.20",
+    "redux": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

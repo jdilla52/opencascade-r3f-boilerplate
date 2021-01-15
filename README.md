@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Things this has:
+It has the start of a directory structure for a multi page app which would get you pretty far.
+It has some frontend essentials:
+- redux
+- lodash
+- workers
+
 ## Available Scripts
 
 In the project directory, you can run:
