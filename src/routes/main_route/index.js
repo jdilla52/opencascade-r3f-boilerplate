@@ -1,12 +1,13 @@
 import MainRouteView from "./view";
-
-import { initOpenCascade } from "opencascade.js";
+import React, {useState, useEffect} from "react";
+import {loadWasm} from "../../helpers/cadLoader";
 
 function MainRoute(){
+    const [wasm, setWasm] = useState(false);
 
-    initOpenCascade().then(openCascade => {
-        // use it!
-    });
+    useEffect(() => {
+        loadWasm().then(loaded => setWasm(loaded));
+    }, [])
 
     return <MainRouteView />
 }
