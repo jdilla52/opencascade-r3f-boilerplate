@@ -1,6 +1,4 @@
-
-import './App.scss';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import MainRoute from "./routes/main_route";
 
 function App() {
