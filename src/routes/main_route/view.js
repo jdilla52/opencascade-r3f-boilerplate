@@ -34,6 +34,16 @@ const SpinningMesh = ({position, args, color, speed}) => {
     )
 }
 
+function BasicMesh({buffers}){
+    if (!buffers) return null;
+    return(
+
+        <mesh castShadow position={[0,0,0]}>
+            <primitive object={buffers}></primitive>
+        </mesh>
+    )
+}
+
 function MainRouteView({mesh}) {
 
     return (
@@ -64,7 +74,7 @@ function MainRouteView({mesh}) {
                         <planeBufferGeometry attach="geometry" args={[100, 100]}/>
                         <shadowMaterial attach="material" opacity={0.3} />
                     </mesh>
-
+                    <BasicMesh buffers={mesh}/>
                     {/*<SpinningMesh position={[0, 1, 0]} args={[3, 2, 1]} color="lightblue" speed={2}/>*/}
                     {/*<SpinningMesh position={[-2, 1, -5]} color="pink" speed={6}/>*/}
                     {/*<SpinningMesh position={[5, 1, -2]} color="pink" speed={6}/>*/}

@@ -376,17 +376,17 @@ module.exports = function (webpackEnv) {
               },
             },
             {
-              test: /opencascade\.wasm\.wasm$/,
+              test: [/opencascade\.wasm\.wasm$/],
               type: "javascript/auto",
               loader: "file-loader"
             },
 
-            {
-              test: [/\.stp$/, /\.step$/, /\.igs$/, /\.iges$/],
-              type: "blob",
-              loader: require.resolve('file-loader'),
-
-            },
+            // {
+            //   test: [/\.stp$/, /\.step$/, /\.igs$/, /\.iges$/],
+            //   type: "blob",
+            //   loader: require.resolve('file-loader'),
+            //
+            // },
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
