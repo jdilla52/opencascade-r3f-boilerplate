@@ -28,13 +28,23 @@ const SpinningMesh = ({position, args, color, speed}) => {
             ref={mesh}
             position={position}
         >
-            <boxBufferGeometry attach="geometry" args={args} />
+            {/*<boxBufferGeometry attach="geometry" args={args} />*/}
             <MeshWobbleMaterial attach="material" color={color} speed={speed} factor={0.6} />
         </a.mesh>
     )
 }
 
-function MainRouteView() {
+function BasicMesh({buffers}){
+    if (!buffers) return null;
+    return(
+
+        <mesh castShadow position={[0,0,0]}>
+            <primitive object={buffers}></primitive>
+        </mesh>
+    )
+}
+
+function MainRouteView({mesh}) {
 
     return (
         <>
@@ -64,14 +74,16 @@ function MainRouteView() {
                         <planeBufferGeometry attach="geometry" args={[100, 100]}/>
                         <shadowMaterial attach="material" opacity={0.3} />
                     </mesh>
-
-                    <SpinningMesh position={[0, 1, 0]} args={[3, 2, 1]} color="lightblue" speed={2}/>
-                    <SpinningMesh position={[-2, 1, -5]} color="pink" speed={6}/>
-                    <SpinningMesh position={[5, 1, -2]} color="pink" speed={6}/>
+                    <BasicMesh buffers={mesh}/>
+                    {/*<SpinningMesh position={[0, 1, 0]} args={[3, 2, 1]} color="lightblue" speed={2}/>*/}
+                    {/*<SpinningMesh position={[-2, 1, -5]} color="pink" speed={6}/>*/}
+                    {/*<SpinningMesh position={[5, 1, -2]} color="pink" speed={6}/>*/}
                 </group>
 
                 <OrbitControls />
             </Canvas>
+
+            <button />
         </>
     );
 }
